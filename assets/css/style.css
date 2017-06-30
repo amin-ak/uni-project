@@ -49,6 +49,10 @@ input[type="text"]:focus{
     border: 3px dotted #337ab7;
     height:23px;
 }
+#reserve_tb td
+{
+    width: 150px;
+}
 select{
     height:26px;
     padding-right: 10px;

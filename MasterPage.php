@@ -14,7 +14,7 @@
             </h1>
         </header>
         <section>
-            <h3>
+            <h3 style="text-align:right;">
                 بسم تعالی
             </h3>
             <p>
@@ -26,22 +26,22 @@
             
             <ul>
                 <li>
-                    <a href="#" id="">
+                    <a href="./index.php" id="">
                         صفحه اصلی
                     </a>
                 </li>
                 <li>
-                    <a href="./reserve.html" id="">
+                    <a href="./reserve.php" id="">
                         گرفتن نوبت
                     </a>
                 </li>
                 <li>
-                    <a href="./request.html" id="">
+                    <a href="./request.php" id="">
                         پیگیری نوبت
                     </a>
                 </li>
                 <li>
-                    <a href="./laghv.html" id="">
+                    <a href="./laghv.php" id="">
                         لغو نوبت
                     </a>
                 </li>
