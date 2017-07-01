@@ -4,7 +4,7 @@
          <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
         <title>
-            hi
+            صفحه ی لغو نوبت
         </title>
     </head>
     <body>
@@ -44,35 +44,7 @@
         </section>
        
         <aside id="category_sec">
-            
-            <ul>
-                <li>
-                    <a href="./index.php" id="">
-                        صفحه اصلی
-                    </a>
-                </li>
-                <li>
-                    <a href="./reserve.php" id="">
-                        گرفتن نوبت
-                    </a>
-                </li>
-                <li>
-                    <a href="./request.php" id="">
-                        پیگیری نوبت
-                    </a>
-                </li>
-                <li>
-                    <a href="./laghv.php" id="">
-                        لغو نوبت
-                    </a>
-                </li>
-                <li>
-                    <a href="#" id="">
-                        تخصص ها
-                    </a>
-
-                </li>
-            </ul>
+            <?php include('./category.php') ?>   
         </aside>
         <footer>
             <span>

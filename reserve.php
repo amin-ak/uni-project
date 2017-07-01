@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>
-        hi
+        صفحه ی دریافت نوبت
     </title>
 </head>
 
@@ -27,17 +26,16 @@
                     <td>گروه تخصص</td>
                     <td>نوع تخصص</td>
                     <td>پزشک</td>
-
-
-
                 </tr>
                 <tr>
                     <td>
+                    <!--date-->
                         <select name="" id="" class="full-width" disabled>
                         <option value="">تا ۱ روز آینده</option>
                       
                    </select>
                     </td>
+                    <!--grouh takhasos -->
                     <td>
                         <select class="full-width" id name>
                             <option selected="selected" value="1">------------</option>
@@ -59,14 +57,18 @@
                             <option value="39">قلب</option>
                    </select>
                     </td>
+                    <!--noe takhasos-->
                     <td>
-                        <select name="" id="" class="full-width">
-                        <option value="">1</option>
-                        <option value="">2</option>
+                        <select name="degree_p" id="" class="full-width">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="10">10</option>
+                        
                    </select>
                     </td>
+                    <!--dr list-->
                     <td>
-                        <select name="" id="" class="full-width">   
+                        <select name="dr_p" id="" class="full-width">   
                         <option value="0">------------</option>
                         <?php
                             
@@ -153,30 +155,45 @@
             </table>
             <div>
                  <?php
+                 
+                 if(isset($_POST['degree_p']))
+                 {
+                     $posted = $_POST['degree_p'];
+                     echo $_POST['degree_p'];
+                
                 // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "Select * from drlist_tb";
+                $sql = "Select * from drlist_tb where degree=".$posted;
                 $result = $db->query($sql);
                 echo "<table border='1'>
                         <tr>
-                            <td>تخصص</td>   
+                            <td>نام</td>   
+                            <td>فامیلی</td>
                             <td>تخصص</td>
-                            <td>تخصص</td>
-                            <td>تخصص</td>
+                            <td>وقت</td>
+                            <td>عملیات مورد نظر</td>                            
                         </tr>";
                 while ($row = $result->fetch())
                     {
                         echo    "<tr>
                                     <td>".$row['name']."</td>
-                                    <td>".$row['name']."</td>
-                                    <td>".$row['name']."</td>
+                                    <td>".$row['family']."</td>
+                                    <td>".$row['degree']."</td>
+                                    <td>".$row['visit_time']."</td>
                                     <td>
-                                        <a href='search?id=".$row['id']."'".$row['id']."'>
+                                        <a href='register.php?id=".$row['id']."'".$row['id']."'>
                                             رزرو نوبت
                                         </a>
                                     </td>
                                 </tr>";
                     }
                         echo "</table>";
+                         }
+                 else
+                 {
+                     echo "sorry";
+                 }
+                 $db = null;
+
                 ?>
             </div>
         </form>
@@ -185,34 +202,7 @@
     </section>
     <aside id="category_sec">
 
-        <ul>
-            <li>
-                <a href="./index.php" id="">
-                        صفحه اصلی
-                    </a>
-            </li>
-            <li>
-                <a href="#" id="">
-                        گرفتن نوبت
-                    </a>
-            </li>
-            <li>
-                <a href="./request.php" id="">
-                        پیگیری نوبت
-                    </a>
-            </li>
-            <li>
-                <a href="./laghv.php" id="">
-                        لغو نوبت
-                    </a>
-            </li>
-            <li>
-                <a href="#" id="">
-                        تخصص ها
-                    </a>
-
-            </li>
-        </ul>
+          <?php include('./category.php') ?>    
     </aside>
     <footer>
         <span>
